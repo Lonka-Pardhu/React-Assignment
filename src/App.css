@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+body{
+  background-color: #00000D;
+}
+#root{
+  margin: 0 auto;
+}
+.shows-main-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.show-container {
+  height: 370px;
+  width: 260px;
+  background-color: #0b0c14;
+  border: 0.5px solid #636363;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease 0s;
+  cursor: pointer;
+}
+.show-img-container{
+  height: 280px;
+  width: 210px;
+}
+.show-img-container > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.show-details-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.show-details-container > p{
+  margin: 0;
+}
+
+
+/* Media query for small screens (mobile phones) */
+@media only screen and (max-width: 500px) {
+  #root{
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Media query for medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Your CSS styles for medium screens go here */
+}
+
+/* Media query for large screens (desktops and laptops) */
+@media only screen and (min-width: 1025px) {
+  /* Your CSS styles for large screens go here */
+}
