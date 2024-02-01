@@ -40,3 +40,16 @@
   .show-details-container > p{
     margin: 0;
   }
+  .show-details-container > p:nth-child(1){
+    font-size: 18px;
+  }
+  .show-details-container > p:nth-child(2){
+    font-weight: 200;
+    font-size: 15px;
+    color: #e0e0e0;
+  }
+  .show-details-container > p:nth-child(3){
+    color: #e0e0e0;
+    font-size: 15px;
+    font-weight: 200;
+  }

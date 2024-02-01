@@ -2,20 +2,29 @@ import './show-about.css'
 import { TiStar } from "react-icons/ti";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import BookingForm from '../Booking-Form/Booking-Form';
 
 const AboutShow = () => {
     const { id } = useParams();
     const [showData, setShowData] = useState(null);
+    const [showBookingForm, setShowBookingForm] = useState(false);
+
 
     useEffect(() => {
         axios.get(`https://api.tvmaze.com/shows/${id}`)
             .then(response => setShowData(response.data))
             .catch(error => console.log('Error fetching show data:', error))
     })
+
+    const handleBookButtonClick = () => {
+        setShowBookingForm(true);
+    }
+
     if (!showData) {
         return <div>Loading...</div>;
     }
+
     return (
         <>
             <div className="show-about-details-container">
@@ -40,9 +49,10 @@ const AboutShow = () => {
                 <div className="show-about-summary-container">
                     <h3>About the movie</h3>
                     <p>{showData.summary}</p>
-                    <button className='book-tickets-button'>Book Tickets</button>
+                    <button className='book-tickets-button' onClick={handleBookButtonClick}>Book Tickets</button>
                 </div>
             </div>
+            {showBookingForm && <BookingForm movieName={showData.name} />}
         </>
     )
 }
