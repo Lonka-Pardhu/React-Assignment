@@ -46,7 +46,7 @@ const AboutShow = () => {
                     </div>
                 </div>
                 <div className="show-about-summary-container">
-                    <h3>About the movie</h3>
+                    <h3>About the show</h3>
                     <p dangerouslySetInnerHTML={{ __html: showData.summary }}></p>
                     <button className='book-tickets-button' onClick={handleBookButtonClick}>Book Tickets</button>
                 </div>
