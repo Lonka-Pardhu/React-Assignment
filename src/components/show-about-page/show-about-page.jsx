@@ -1,15 +1,15 @@
-import './show-about.css'
-import { TiStar } from "react-icons/ti";
 import axios from "axios";
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { TiStar } from "react-icons/ti";
 import BookingForm from '../Booking-Form/Booking-Form';
+import './show-about.css'
 
 const AboutShow = () => {
-    const { id } = useParams();
+
     const [showData, setShowData] = useState(null);
     const [showBookingForm, setShowBookingForm] = useState(false);
-
+    const { id } = useParams();
 
     useEffect(() => {
         axios.get(`https://api.tvmaze.com/shows/${id}`)
@@ -44,15 +44,17 @@ const AboutShow = () => {
                         <span className='react-icon'><TiStar /></span>
                         <p>{showData.rating.average ? showData.rating.average : '?'}/10</p>
                     </div>
-
                 </div>
                 <div className="show-about-summary-container">
                     <h3>About the movie</h3>
-                    <p>{showData.summary}</p>
+                    <p dangerouslySetInnerHTML={{ __html: showData.summary }}></p>
                     <button className='book-tickets-button' onClick={handleBookButtonClick}>Book Tickets</button>
                 </div>
             </div>
-            {showBookingForm && <BookingForm movieName={showData.name} />}
+            {showBookingForm &&
+                <BookingForm movieName={showData.name}
+                    showBookingForm={showBookingForm}
+                    setShowBookingForm={setShowBookingForm} />}
         </>
     )
 }
