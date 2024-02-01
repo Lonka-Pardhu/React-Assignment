@@ -1,8 +1,11 @@
+import './Shows-page.css'
 import axios from "axios";
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
-const MoviesPage = () => {
+const ShowsPage = () => {
     const [showsData, setShowsData] = useState([]);
+
 
     useEffect(() => {
         axios.get('https://api.tvmaze.com/search/shows?q=all')
@@ -13,22 +16,26 @@ const MoviesPage = () => {
         <>
             <div className="shows-main-wrapper">
                 {showsData.map(showInfo => (
-                    <div key={showInfo.show.id} className="show-container" >
-                        <div className="show-img-container">
-                            {showInfo.show.image && (
-                                <img src={showInfo.show.image.original} alt="s" />
-                            )}
+                    <Link key={showInfo.show.id} to={`/${showInfo.show.id}`} style={{ textDecoration: 'none' }}>
+                        <div className="show-container" >
+                            <div className="show-img-container">
+                                {showInfo.show.image ?
+                                    <img src={showInfo.show.image.original} alt={`${showInfo.show.name} image`} />
+                                    :
+                                    <p>Image not provided</p>
+                                }
+                            </div>
+                            <div className="show-details-container">
+                                <p>{showInfo.show.name}</p>
+                                <p>{showInfo.show.rating.average}/10</p>
+                                <p>{showInfo.show.genres.join('/ ')}</p>
+                            </div>
                         </div>
-                        <div className="show-details-container">
-                            <p>{showInfo.show.name}</p>
-                            <p>{showInfo.show.rating.average}/10</p>
-                            <p>{showInfo.show.genres}</p>
-                        </div>
-                    </div>
+                    </Link>
                 ))}
-            </div>
+            </div >
         </>
     )
 }
 
-export default MoviesPage;
+export default ShowsPage;
