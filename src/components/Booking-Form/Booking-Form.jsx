@@ -36,7 +36,7 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
     const handleCancelClick = () => {
         setShowBookingForm(false)
     }
-
+    
     return (
         <>
             {showBookingForm && (
