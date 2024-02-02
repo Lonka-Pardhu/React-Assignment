@@ -4,7 +4,6 @@ import './Booking-Form.css'
 const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
 
     const confirmButtonRef = useRef(null);
-    const formDisplay = useRef(null);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -22,26 +21,26 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         localStorage.setItem('bookingFormData', JSON.stringify(formData));
+
         if (confirmButtonRef.current) {
             confirmButtonRef.current.innerHTML = 'confirmed';
         }
-        if (formDisplay.current) {
-            formDisplay.current.style.display = 'none';
-        }
+        setTimeout(() => {
+            setShowBookingForm(false)
+        }, 1000)
+
     };
 
     const handleCancelClick = () => {
-        if (formDisplay.current) {
-            formDisplay.current.style.display = 'none';
-            setShowBookingForm(false)
-        }
+        setShowBookingForm(false)
     }
 
     return (
         <>
             {showBookingForm && (
-                <div ref={formDisplay} className="booking-form">
+                <div className="booking-form">
                     <h2>{movieName}</h2>
                     <form onSubmit={handleSubmit} className="main-form">
                         <div>
