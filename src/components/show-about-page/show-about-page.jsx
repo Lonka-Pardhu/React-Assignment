@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TiStar } from "react-icons/ti";
 import BookingForm from '../Booking-Form/Booking-Form';
-import './show-about.css'
+import './show-about.css';
 
 const AboutShow = () => {
 
@@ -35,9 +35,10 @@ const AboutShow = () => {
                     </div>
                     <div className="show-about-image-container">
                         {showData.image ?
+
                             <img src={showData.image.original} alt={`${showData.name} image`} />
                             :
-                            <p>image  no provided</p>
+                            <p>image not provided</p>
                         }
                     </div>
                     <div className="show-about-rating-container">

@@ -18,7 +18,7 @@ const ShowsPage = () => {
         <div className="shows-main-wrapper">
             {showsData.map(showInfo => (
 
-                <div className="show-container" >
+                <div key={showInfo.show.id} className="show-container" >
                     <div className="show-img-container">
                         {showInfo.show.image ?
                             <img src={showInfo.show.image.original} alt={`${showInfo.show.name} image`} />
@@ -31,7 +31,7 @@ const ShowsPage = () => {
                         <p><TiStar />{showInfo.show.rating.average}/10</p>
                         <p>{showInfo.show.genres.join('/ ')}</p>
                     </div>
-                    <Link key={showInfo.show.id} to={`/${showInfo.show.id}`} className="link-wrapper">
+                    <Link to={`/${showInfo.show.id}`} className="link-wrapper">
                         <button className="openAboutBtn">Know more</button>
                     </Link>
                 </div>

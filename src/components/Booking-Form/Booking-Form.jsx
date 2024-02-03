@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import './Booking-Form.css'
+import { BookingFormStyled, FormHeadingStyled, MainFormStyled, FormEleWrapper, FormInputStyled, FormLabelStyled, ConfirmButtonStyled, CancelBookingStyled } from './Booking-Form-Styled'
+
 
 const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
 
@@ -36,16 +37,16 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
     const handleCancelClick = () => {
         setShowBookingForm(false)
     }
-    
+
     return (
         <>
             {showBookingForm && (
-                <div className="booking-form">
-                    <h2>{movieName}</h2>
-                    <form onSubmit={handleSubmit} className="main-form">
-                        <div>
-                            <label htmlFor="name">Name:</label>
-                            <input
+                <BookingFormStyled>
+                    <FormHeadingStyled>{movieName}</FormHeadingStyled>
+                    <MainFormStyled onSubmit={handleSubmit}>
+                        <FormEleWrapper>
+                            <FormLabelStyled htmlFor="name">Name:</FormLabelStyled>
+                            <FormInputStyled
                                 type="text"
                                 id="name"
                                 name="name"
@@ -53,10 +54,10 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
                                 onChange={handleChange}
                                 required
                             />
-                        </div>
-                        <div>
-                            <label htmlFor="email">Email:</label>
-                            <input
+                        </FormEleWrapper>
+                        <FormEleWrapper>
+                            <FormLabelStyled htmlFor="email">Email:</FormLabelStyled>
+                            <FormInputStyled
                                 type="email"
                                 id="email"
                                 name="email"
@@ -64,10 +65,10 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
                                 onChange={handleChange}
                                 required
                             />
-                        </div>
-                        <div>
-                            <label htmlFor="numberOfTickets">Number of Tickets:</label>
-                            <input
+                        </FormEleWrapper>
+                        <FormEleWrapper>
+                            <FormLabelStyled htmlFor="numberOfTickets">Number of Tickets:</FormLabelStyled>
+                            <FormInputStyled
                                 type="number"
                                 id="numberOfTickets"
                                 name="numberOfTickets"
@@ -76,11 +77,11 @@ const BookingForm = ({ movieName, showBookingForm, setShowBookingForm }) => {
                                 min="1"
                                 required
                             />
-                        </div>
-                        <button ref={confirmButtonRef} type="submit">Confirm</button>
-                        <p onClick={handleCancelClick} className="cancelBookingBtn">Cancel</p>
-                    </form>
-                </div>
+                        </FormEleWrapper>
+                        <ConfirmButtonStyled ref={confirmButtonRef} type="submit">Confirm</ConfirmButtonStyled>
+                        <CancelBookingStyled onClick={handleCancelClick} className="cancelBookingBtn">Cancel</CancelBookingStyled>
+                    </MainFormStyled>
+                </BookingFormStyled>
             )}
         </>
     );
