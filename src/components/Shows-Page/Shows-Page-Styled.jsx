@@ -1,11 +1,13 @@
-.shows-main-wrapper{
+import { styled } from "styled-components";
+
+export const ShowMainWrapperStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
+`
 
-.show-container {
+export const ShowContainerStyled = styled.div`
   height: 390px;
   width: 260px;
   background-color: #0b0c14;
@@ -18,52 +20,49 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease 0s;
-}
+`
 
-.show-img-container{
+export const ShowImgContainerStyled = styled.div`
   height: 280px;
   width: 210px;
   text-align: center;
-}
-  
-.show-img-container > img{
+`
+
+export const ImgStyled = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 5px;
-}
-  
-.show-details-container{
+`
+
+export const TextStyled = styled.p`
+  margin: 0;
+`
+
+export const ShowDetailsContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-.show-details-container > p{
-  margin: 0;
-}
+  > ${TextStyled}:nth-child(1) {
+    font-size: 18px;
+  }
 
-.show-details-container > p:nth-child(1){
-  font-size: 18px;
-}
+  > ${TextStyled}:nth-child(2) {
+    font-weight: 200;
+    font-size: 15px;
+    color: #e0e0e0;
+  }
 
-.show-details-container > p:nth-child(2){
-  font-weight: 200;
-  font-size: 15px;
-  color: #e0e0e0;
-}
+  > ${TextStyled}:nth-child(3) {
+    color: #e0e0e0;
+    font-size: 15px;
+    font-weight: 200;
+  }
 
-.show-details-container > p:nth-child(3){
-  color: #e0e0e0;
-  font-size: 15px;
-  font-weight: 200;
-}
+`
 
-.link-wrapper{
-  text-decoration: none;
-}
-
-.openAboutBtn{
+export const KnowMoreBtnStyled = styled.button`
   font-size: 12px;
   font-weight: 500;
   background-color: rgb(93, 203, 243);
@@ -72,4 +71,4 @@
   border: none;
   border-radius: 2px;
   transition: background-color 0.3s ease
-}
+  `

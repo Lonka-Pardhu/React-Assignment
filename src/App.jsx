@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import ShowsPage from './components/Shows-Page/Shows-Page'
-import AboutShow from './components/show-about-page/show-about-page';
+import AboutShow from './components/Show-About-Page/About-Show-Page';
 import NoMatch from './components/No-Match-Route/No-Match';
 import './App.css'
 

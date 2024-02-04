@@ -1,9 +1,11 @@
+import { NoMatchErrStyled, ErrTitleStyled, ErrTextStyled } from "./No-Match-Styled";
+
 const NoMatch = () => {
   return (
-    <div >
-      <h2>404: Page Not Found</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adip.</p>
-    </div>
+    <NoMatchErrStyled >
+      <ErrTitleStyled>404: Page Not Found</ErrTitleStyled>
+      <ErrTextStyled>Lorem ipsum dolor sit amet, consectetur adip.</ErrTextStyled>
+    </NoMatchErrStyled>
   );
 }
 

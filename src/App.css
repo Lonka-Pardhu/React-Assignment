@@ -26,12 +26,3 @@ body{
   }
 }
 
-/* Media query for medium screens (tablets) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Your CSS styles for medium screens go here */
-}
-
-/* Media query for large screens (desktops and laptops) */
-@media only screen and (min-width: 1025px) {
-  /* Your CSS styles for large screens go here */
-}

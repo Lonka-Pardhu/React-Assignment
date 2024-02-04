@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { TiStar } from "react-icons/ti";
 import axios from "axios";
+import { ShowMainWrapperStyled, ShowContainerStyled, ShowImgContainerStyled, ShowDetailsContainerStyled, KnowMoreBtnStyled, TextStyled, ImgStyled } from './Shows-Page-Styled';
 import { Link } from 'react-router-dom';
-import './Shows-page.css'
+
 
 const ShowsPage = () => {
 
@@ -15,29 +16,28 @@ const ShowsPage = () => {
     }, [])
 
     return (
-        <div className="shows-main-wrapper">
+        <ShowMainWrapperStyled>
             {showsData.map(showInfo => (
 
-                <div key={showInfo.show.id} className="show-container" >
-                    <div className="show-img-container">
+                <ShowContainerStyled key={showInfo.show.id} >
+                    <ShowImgContainerStyled>
                         {showInfo.show.image ?
-                            <img src={showInfo.show.image.original} alt={`${showInfo.show.name} image`} />
+                            <ImgStyled src={showInfo.show.image.original} alt={`${showInfo.show.name} image`} />
                             :
-                            <p>Image not provided</p>
+                            <TextStyled>Image not provided</TextStyled>
                         }
-                    </div>
-                    <div className="show-details-container">
-                        <p>{showInfo.show.name}</p>
-                        <p><TiStar />{showInfo.show.rating.average}/10</p>
-                        <p>{showInfo.show.genres.join('/ ')}</p>
-                    </div>
-                    <Link to={`/${showInfo.show.id}`} className="link-wrapper">
-                        <button className="openAboutBtn">Know more</button>
+                    </ShowImgContainerStyled>
+                    <ShowDetailsContainerStyled>
+                        <TextStyled>{showInfo.show.name}</TextStyled>
+                        <TextStyled><TiStar />{showInfo.show.rating.average}/10</TextStyled>
+                        <TextStyled>{showInfo.show.genres.join('/ ')}</TextStyled>
+                    </ShowDetailsContainerStyled>
+                    <Link to={`/${showInfo.show.id}`}>
+                        <KnowMoreBtnStyled>Know more</KnowMoreBtnStyled>
                     </Link>
-                </div>
-            ))
-            }
-        </div >
+                </ShowContainerStyled>
+            ))}
+        </ShowMainWrapperStyled>
     )
 }
 
