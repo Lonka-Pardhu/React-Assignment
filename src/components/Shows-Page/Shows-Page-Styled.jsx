@@ -5,6 +5,7 @@ export const ShowMainWrapperStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 `
 
 export const ShowContainerStyled = styled.div`
@@ -13,7 +14,7 @@ export const ShowContainerStyled = styled.div`
   background-color: #0b0c14;
   border: 0.5px solid #636363;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;;
   margin: 10px;
   display: flex;
   flex-direction: column;

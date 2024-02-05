@@ -4,7 +4,6 @@ import axios from "axios";
 import { ShowMainWrapperStyled, ShowContainerStyled, ShowImgContainerStyled, ShowDetailsContainerStyled, KnowMoreBtnStyled, TextStyled, ImgStyled } from './Shows-Page-Styled';
 import { Link } from 'react-router-dom';
 
-
 const ShowsPage = () => {
 
     const [showsData, setShowsData] = useState([]);
