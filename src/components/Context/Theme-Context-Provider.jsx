@@ -7,13 +7,13 @@ const ThemeContextProvider = ({ children }) => {
 
     const lightTheme = {
         pageBackground: '#e1f8ff',
-        textColor: 'black',
+        textColor: '#000000',
         showEleBackground: '#ededed'
     };
 
     const darkTheme = {
         pageBackground: '#00000D',
-        textColor: 'white',
+        textColor: '#ffffff',
         showEleBackground: '#0b0c14'
     };
 

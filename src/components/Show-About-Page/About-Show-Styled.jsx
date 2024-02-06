@@ -15,9 +15,11 @@ export const AboutShowContainerStyled = styled.div`
 
 export const AboutShowWrapperStyled = styled.div``
 
-export const ShowTitleContainerStyled = styled.div``
+export const ShowTitleContainerStyled = styled.div`
+    color: ${props => props.theme.textColor};
+`
 
-export const ShowTitleStyled = styled.div`
+export const ShowTitleStyled = styled.h2`
     margin: 0;
 `
 
@@ -41,6 +43,7 @@ export const ShowImgStyled = styled.img`
 `
 
 export const ShowSummaryContainer = styled.div`
+    color: ${props => props.theme.textColor};
     width: 70%;
 `
 
@@ -52,7 +55,9 @@ export const ShowSummaryStyled = styled.p``
 
 export const ImgErrStyled = styled.p``
 
-export const ShowRatingStyled = styled.p``
+export const ShowRatingStyled = styled.p`
+    color: ${props => props.theme.textColor};
+`
 
 export const BookTicketsBtnStyled = styled.button`
     color: rgb(235, 235, 235);
@@ -78,5 +83,10 @@ export const ShowRatingContainer = styled.div`
 export const IconHolderStyled = styled.span`
     font-size: 18px;
     margin-top: 5px;
+
+    >svg{
+        fill: yellow;
+        stroke-width: 0.5;
+    }
 `
 

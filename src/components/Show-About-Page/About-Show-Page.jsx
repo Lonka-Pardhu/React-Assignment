@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { TiStar } from "react-icons/ti";
 import BookingForm from '../Booking-Form/Booking-Form';
 import { LoadingTextStyled, AboutShowContainerStyled, AboutShowWrapperStyled, ShowTitleContainerStyled, ShowTitleStyled, ShowGenresStyled, ShowImageContainer, ShowImgStyled, ImgErrStyled, ShowSummaryContainer, ShowSummaryTitleStyled, ShowSummaryStyled, BookTicketsBtnStyled, ShowRatingContainer, ShowRatingStyled, IconHolderStyled } from "./About-Show-Styled";
+import ThemeContext from "../Context/Theme-Context";
 
 const AboutShow = () => {
+    const { currentTheme } = useContext(ThemeContext);
 
     const [showData, setShowData] = useState(null);
     const [showBookingForm, setShowBookingForm] = useState(false);
@@ -29,7 +31,7 @@ const AboutShow = () => {
         <>
             <AboutShowContainerStyled>
                 <AboutShowWrapperStyled>
-                    <ShowTitleContainerStyled>
+                    <ShowTitleContainerStyled theme={currentTheme}>
                         <ShowTitleStyled>{showData.name}</ShowTitleStyled>
                         <ShowGenresStyled>{showData.genres.join('/ ')}</ShowGenresStyled>
                     </ShowTitleContainerStyled>
@@ -43,10 +45,10 @@ const AboutShow = () => {
                     </ShowImageContainer>
                     <ShowRatingContainer>
                         <IconHolderStyled><TiStar /></IconHolderStyled>
-                        <ShowRatingStyled>{showData.rating.average ? showData.rating.average : '?'}/10</ShowRatingStyled>
+                        <ShowRatingStyled theme={currentTheme}>{showData.rating.average ? showData.rating.average : '?'}/10</ShowRatingStyled>
                     </ShowRatingContainer>
                 </AboutShowWrapperStyled>
-                <ShowSummaryContainer>
+                <ShowSummaryContainer theme={currentTheme}>
                     <ShowSummaryTitleStyled>About the show</ShowSummaryTitleStyled>
                     <ShowSummaryStyled dangerouslySetInnerHTML={{ __html: showData.summary }}></ShowSummaryStyled>
                     <BookTicketsBtnStyled onClick={handleBookButtonClick}>Book Tickets</BookTicketsBtnStyled>

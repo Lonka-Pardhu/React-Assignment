@@ -5,13 +5,12 @@ export const ShowMainWrapperStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
 `
 
 export const ShowContainerStyled = styled.div`
   height: 390px;
   width: 260px;
-  background-color: #0b0c14;
+  background-color: ${props => props.theme.showEleBackground};
   border: 0.5px solid #636363;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;;
@@ -27,6 +26,7 @@ export const ShowImgContainerStyled = styled.div`
   height: 280px;
   width: 210px;
   text-align: center;
+  color: ${props => props.theme.textColor};
 `
 
 export const ImgStyled = styled.img`
@@ -44,21 +44,24 @@ export const ShowDetailsContainerStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  color: ${props => props.theme.textColor};
+  
   > ${TextStyled}:nth-child(1) {
+    font-weight: 500;
     font-size: 18px;
   }
 
   > ${TextStyled}:nth-child(2) {
-    font-weight: 200;
     font-size: 15px;
-    color: #e0e0e0;
+
+    >svg{
+      fill: yellow;
+      stroke-width: 0.5;
+    }
   }
 
   > ${TextStyled}:nth-child(3) {
-    color: #e0e0e0;
     font-size: 15px;
-    font-weight: 200;
   }
 
 `
@@ -71,5 +74,4 @@ export const KnowMoreBtnStyled = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 2px;
-  transition: background-color 0.3s ease
-  `
+`

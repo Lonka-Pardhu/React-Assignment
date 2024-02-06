@@ -3,20 +3,16 @@
 *{
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  color: #fff;
 }
 
 body{
-  /* background-color: #00000D; */
   margin: 0;
 }
 
 #root{
   margin: 0 auto;
-  padding: 30px;
   height: 100%;
   width: 100%;
-  background-color: #00000D;
 }
 
 

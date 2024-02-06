@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ThemeButtonContainer, ThemeButton } from "./Theme-Button-Styled"
 import { FaMoon, FaSun } from "react-icons/fa";
 import ThemeContext from "../Context/Theme-Context";
@@ -12,7 +12,7 @@ const ThemeChangeButton = () => {
 
     return (
         <ThemeButtonContainer>
-            <ThemeButton themeMode={themeMode} onClick={handleThemeChange}>
+            <ThemeButton themeState={themeMode} onClick={handleThemeChange}>
                 {themeMode ? 'Light' : 'Dark'}
                 {themeMode ? <FaSun /> : <FaMoon />}
             </ThemeButton>
