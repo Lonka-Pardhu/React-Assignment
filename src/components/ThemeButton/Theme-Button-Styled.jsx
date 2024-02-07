@@ -10,12 +10,12 @@ export const ThemeButtonContainer = styled.div`
 export const ThemeButton = styled.button`
     height: 50px;
     width: 90px;
-    color: ${props => props.themeState ? '#3194B5' : '#149CC9'};
+    color: ${props => props.themeState ? '#149CC9' : '#3194B5'};
     display: flex;
     align-items: center;
     justify-content: center;
     letter-spacing: 1px;
-    background-color: ${props => props.themeState ? '#c0ecff' : '#283541'};
+    background-color: ${props => props.themeState ? '#283541' : '#c0ecff'};
     border: none;
     border-radius: 10px;
     gap:2px;
